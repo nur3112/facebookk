@@ -534,6 +534,87 @@
             margin-right: auto;
             margin-left: 5px;
         }
+        .account-modal {
+            position: fixed;
+            top: 50px;
+            right: 10px;
+            width: 360px;
+            padding: 15px;
+            box-sizing: border-box;
+
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px lightgray;
+            background-color: white;
+
+            display: none;
+        }
+        .account-info {
+            width: 325px;
+            padding: 15px;
+            box-sizing: border-box;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px lightgray;
+
+            margin-bottom: 10px;
+        }
+        .account-profile {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .account-profile:hover {
+            background-color: #f2f2f2;
+        }
+        .account-profile > div{
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 1px solid #f2f2f2;
+            margin-right: 10px;
+        }
+        .account-profile > span{
+            margin-right: auto;
+        }
+        .account-info > hr{
+            width: 100%;
+        }
+        .account-info > div:last-child{
+        color: blue;
+        height: 28px;
+        border-radius: 8px;
+        padding: 15px 5px;
+        align-items: flex-start;
+        }
+        .account-info > div{
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .account-info > div:hover{
+            background-color: #f2f2f2;
+        }
+        .account-modal > li > div{
+            width: 36px;
+            height: 36px;
+            overflow: hidden;
+            border-radius: 50%;
+            background-color: #e4e6eb;
+        }
+        .account-modal > li > span{
+            margin-left: 5px;
+            margin-right: auto;
+        }
+        .account-modal > li{
+            padding: 10px;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        .account-modal > li:hover{
+            background-color: #f2f2f2;
+        }
+        .account-modal > li:hover > div{
+            filter: brightness(0.95);
+        }
     </style>
     <script>
         function showIcon() {
@@ -566,6 +647,15 @@
         function unhover(element){
             element.setAttribute("src", "image/gnb/6.png");
         }
+
+        function accountmodal(){
+            let status = $('#account-modal').css('display');
+            if (status == 'block'){
+                $('#account-modal').hide()
+            }else{
+                $('#account-modal').show()
+            }
+        }
     </script>
 </head>
 
@@ -575,7 +665,7 @@
             <img width="40" src="image/logo.png">
             <div class="search-box flex-row">
                 <i id="search-icon" class="bi bi-search"></i>
-                <input placeholder="Search Facebook" type="text" onfocus="hideIcon()" onblur="showIcon()">
+                <input placeholder="nur aisyah" type="text" onfocus="hideIcon()" onblur="showIcon()">
             </div>
         </div>
         <div class="gnb-middle flex-row">
@@ -605,7 +695,7 @@
             <div class="nav-tab-right flex-row">
                 <img src="image/gnb/8.png">
             </div>
-            <div class="nav-tab-right flex-row">
+            <div onclick="accountmodal()" class="nav-tab-right flex-row">
                 <img src="image/gnb/9.png">
             </div>
         </div>
@@ -616,7 +706,7 @@
                 <div class="flex-row">
                     <img src="image/feed/1.png">
                 </div>
-                <span>Sparta</span>
+                <span>kucingg</span>
             </li>
             <li class="flex-row">
                 <img src="image/feed/2.png">
@@ -852,9 +942,54 @@
                     <span>events</span>
                 </li>
             </div>
-        </div>
-        
+        </div>  
     </div>
+    <div class="account-modal" id="account-modal">
+        <div class="account-info flex-col">
+            <div class="account-profile flex-row">
+                <div class="flex-row">
+                    <img width="40" src="image/gnb/9.png">
+                </div>
+                <span>kucingg</span>
+            </div>
+            <hr>
+            <div class="flex-col">see all profiles</div>
+        </div>
+        <li class="flex-row">
+            <div class="flex-row">
+                <img width="22" src="image/modal/13.png">
+            </div>
+            <span>settings & privacy</span>
+            <img width="22" src="image/modal/18.png">
+        </li>
+        <li class="flex-row">
+            <div class="flex-row">
+                <img width="22" src="image/modal/14.png">
+            </div>
+            <span>help & support</span>
+            <img width="22" src="image/modal/18.png">
+        </li>
+        <li class="flex-row">
+            <div class="flex-row">
+                <img width="22" src="image/modal/15.png">
+            </div>
+            <span>display & accessibility</span>
+            <img width="22" src="image/modal/18.png">
+        </li>
+        <li class="flex-row">
+            <div class="flex-row">
+                <img width="22" src="image/modal/16.png">
+            </div>
+            <span>give feedback</span>
+        </li>
+        <li class="flex-row">
+            <div class="flex-row">
+                <img width="22" src="image/modal/17.png">
+            </div>
+            <span>log out</span>
+        </li>
+    </div>
+
 </body>
 
 </html>
